@@ -18,4 +18,8 @@ public class EniService {
     public List<Crayon> listerCrayons() {
         return crayonsBouchonnes;
     }
+
+    public Crayon getCrayonById(int id) {
+        return crayonsBouchonnes.get(id);
+    }
 }
