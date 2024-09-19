@@ -19,10 +19,12 @@ public class Bonhomme {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @NotNull @Size(min = 2, max = 50)
+    @NotNull(message = "{bonhomme.nom.notnull}")
+    @Size(min = 2, max = 50, message = "{bonhomme.nom.size}")
     private String nom;
 
-    @Min(18) @Max(140)
+    @Min(value = 18, message = "{bonhomme.age.min}")
+    @Max(value = 140, message = "{bonhomme.age.max}")
     private int age;
 
     @OneToOne(cascade = CascadeType.ALL)
